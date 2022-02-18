@@ -1,6 +1,8 @@
 <template>
 <div>
-  <router-view></router-view>
+  <div><router-link to="/home">home</router-link></div>
+  <div><router-link to="/blog">blog</router-link></div>
+  <div><router-view></router-view></div>
 </div>
 </template>
 

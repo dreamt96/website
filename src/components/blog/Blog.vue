@@ -1,11 +1,11 @@
 <template>
-  123
-  {{ txt }}
+  <div v-html="txt"></div>
 </template>
 <script lang="ts">
 import {Vue} from "vue-class-component";
 import configStr from "raw-loader!../../../writing/writing.config.json.txt";
 import WritingConfig from "@/components/blog/WritingConfig";
+import StringUtil from "@/components/util/StringUtil";
 
 export default class Blog extends Vue {
   txt = "";
@@ -19,23 +19,16 @@ export default class Blog extends Vue {
 
 
   mounted() {
-    console.log("1");
-    console.log(configStr);
-    console.log("1");
-    console.log("2");
-    console.log(configStr.replaceAll("\\r","").replaceAll("\\n","").replaceAll("\\",""));
-    console.log("2");
-    console.log("3");
-    console.log(JSON.parse(configStr.replaceAll("\\r","").replaceAll("\\n","").replaceAll("\\","")));
-    console.log("3");
+    this.config = StringUtil.rowToString(configStr);
     for (let i = 0; i < this.config.blogs.length; i++) {
       let blog = this.config.blogs[i];
       this.txt += blog.title;
-      this.txt += "\n";
-      this.txt += require("../../../writing/"+blog.path);
-      this.txt += "\n";
+      this.txt += "<br/>";
+      let a = require("../../../writing/"+blog.path);
+      this.txt += JSON.stringify(a.default);
+      this.txt += "<br/>";
+      this.txt += "<br/>";
     }
-
 
     // setInterval(() => {
     //   let num = Date.now() % 2 + 1;

@@ -1,10 +1,12 @@
 {
     "blogs": [
         {
-            "path": "1.md"
+            "path": "1.md",
+            "title": "1 title"
         },
         {
-            "path": "2.md"
+            "path": "2.md",
+            "title": "2 title"
         }
     ]
 }
