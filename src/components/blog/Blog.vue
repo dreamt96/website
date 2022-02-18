@@ -12,7 +12,7 @@ export default class Blog extends Vue {
   mounted() {
     setInterval(() => {
       let num = Date.now() % 2 + 1;
-      let raw = require("raw-loader!../../../writing/" + num + ".md");
+      let raw = require("../../../writing/" + num + ".md");
       this.txt = JSON.stringify(raw);
     }, 500)
   }
