@@ -7,10 +7,10 @@
 </template>
 
 <script lang="ts">
-import {Vue} from "vue-class-component";
-
-export default class Layout extends Vue{
-}
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: 'Layout',
+});
 </script>
 
 <style scoped>
