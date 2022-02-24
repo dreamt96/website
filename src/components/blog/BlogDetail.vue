@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>{{ title }}</div>
-    <div>{{content}}</div>
+    <div v-html="content"/>
   </div>
 </template>
 
@@ -15,14 +15,14 @@ export default defineComponent({
     return {
       title: '',
       path: '',
-      content: null,
+      content: "",
     }
   },
   props: {},
   mounted() {
     this.title = this.$route.query.title ? this.$route.query.title.toString() : "blank";
     this.path = this.$route.query.path ? this.$route.query.path.toString() : "blank";
-    this.content = require("../../../writing/" + this.path).default;
+    this.content = StringUtil.markdownToHtml(require("../../../writing/" + this.path).default);
   }
 })
 </script>

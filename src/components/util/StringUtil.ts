@@ -8,4 +8,10 @@ export default class StringUtil {
         console.log(str);
         return JSON.parse(str);
     }
+
+    public static markdownToHtml(strInput: string): string {
+        let str = strInput;
+        str = str.replaceAll("\n", "</br>");
+        return str;
+    }
 }
