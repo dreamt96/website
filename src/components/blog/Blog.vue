@@ -6,7 +6,7 @@
   </div>
 </template>
 <script lang="ts">
-import configStr from "raw-loader!../../../writing/writing.config.json.txt";
+import config from "../../../writing/writing.config.json";
 import WritingConfig from "@/components/blog/WritingConfig";
 import StringUtil from "@/components/util/StringUtil";
 import {defineComponent} from 'vue';
@@ -15,11 +15,12 @@ export default defineComponent({
   name:"Blog",
   data() {
     return {
-      config: WritingConfig.ofDefault(),
+      config: config,
     }
   },
   mounted() {
-    this.config= StringUtil.rowToObject(configStr);
+    console.log(config);
+    // this.config= StringUtil.rowToObject(configStr);
   }
 
 });

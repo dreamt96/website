@@ -22,7 +22,7 @@ export default defineComponent({
   mounted() {
     this.title = this.$route.query.title ? this.$route.query.title.toString() : "blank";
     this.path = this.$route.query.path ? this.$route.query.path.toString() : "blank";
-    this.content = require("raw-loader!../../../writing/" + this.path).default;
+    this.content = require("../../../writing/" + this.path).default;
   }
 })
 </script>

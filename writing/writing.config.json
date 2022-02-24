@@ -1,8 +1,8 @@
 {
     "blogs": [
         {
-            "path": "1.md",
-            "title": "1 title"
+            "path": "2022/02/review_summary.md",
+            "title": "review summary"
         },
         {
             "path": "2.md",

@@ -4,7 +4,7 @@ module.exports = defineConfig({
     chainWebpack: config => {
         config.module
           .rule('raw')
-          .test(/\.(md|json|txt)$/)
+          .test(/\.(md|txt)$/)
           .use('raw-loader')
           .loader('raw-loader')
           .end()
