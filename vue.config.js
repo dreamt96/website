@@ -3,10 +3,19 @@ module.exports = defineConfig({
     transpileDependencies: true,
     chainWebpack: config => {
         config.module
-          .rule('raw')
+          .rule("raw")
           .test(/\.(md|txt)$/)
-          .use('raw-loader')
-          .loader('raw-loader')
-          .end()
+          .use("raw-loader")
+          .loader("raw-loader")
+          .end();
+    },
+    css: {
+        loaderOptions: {
+            sass: {
+                additionalData: `
+                                     @import "/src/style/global.scss";
+                                `
+            }
+        }
     }
 });

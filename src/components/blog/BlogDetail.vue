@@ -27,6 +27,8 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+div{
 
+}
 </style>

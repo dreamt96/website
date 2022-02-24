@@ -12,7 +12,7 @@ import StringUtil from "@/components/util/StringUtil";
 import {defineComponent} from 'vue';
 
 export default defineComponent({
-  name:"Blog",
+  name: "Blog",
   data() {
     return {
       config: config,
@@ -57,6 +57,8 @@ export default defineComponent({
 // }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+div {
 
+}
 </style>
