@@ -50,6 +50,7 @@
       "no-undef": "warn",
       "vue/require-v-for-key": "warn",
       "vue/multi-word-component-names": "warn",
+      "prefer-const": "warn",
       "vue/no-unused-vars": "warn"
     }
   },

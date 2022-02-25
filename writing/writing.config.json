@@ -1,12 +1,12 @@
 {
     "blogs": [
         {
-            "path": "2022/02/review_summary.md",
-            "title": "review summary"
+            "title": "review summary",
+            "path": "2022/02/review_summary.md"
         },
         {
-            "path": "2.md",
-            "title": "2 title"
+            "title": "test",
+            "path": "2022/02/test.md"
         }
     ]
 }

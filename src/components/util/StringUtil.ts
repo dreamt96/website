@@ -1,4 +1,6 @@
 export default class StringUtil {
+
+
     public static rowToObject(rowStr: string): any {
         let str = rowStr.replace("export default", "");
         str = str.substring(2, str.length - 2);

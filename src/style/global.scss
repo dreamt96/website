@@ -1,5 +1,18 @@
+:root {
+  font-size: calc(0.5em + 1vw);
+}
+
 body {
-  div{
+  div {
     background-color: bisque;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1em;
+  }
+
+  .hidden {
+    visibility: hidden;
   }
 }
