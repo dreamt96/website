@@ -50,25 +50,29 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.root{
 
 
-//h1 {
-//  font-size: 1.8rem;
-//}
-//
-//h2 {
-//  font-size: 1.5rem;
-//}
-//
-//h3 {
-//  font-size: 1.2rem;
-//}
-//
-//h4 {
-//  font-size: 0.8rem;
-//}
-//
-//h5 {
-//  font-size: 0.6rem;
-//}
+  ::v-deep(h1) {
+    font-size: 1.8rem;
+  }
+
+  ::v-deep(h2) {
+    font-size: 1.5rem;
+  }
+
+  ::v-deep(h3) {
+    font-size: 1.3rem;
+  }
+
+  ::v-deep(h4) {
+    font-size: 1.2rem;
+  }
+
+  ::v-deep(h5) {
+    font-size: 1.1rem;
+  }
+}
+
+
 </style>

@@ -14,9 +14,17 @@ export default class StringUtil {
     }
 
     public static markdownToHtml(strInput: string): string {
+        console.log("before");
+        console.log(strInput);
         let str = strInput;
         str = this.processHeader(str);
+
+        console.log("before br");
+        console.log(str);
+
         str = str.replaceAll("\n", "</br>");
+        console.log("after");
+        console.log(str);
         return str;
     }
 
