@@ -7,4 +7,8 @@ export default class DomUtil {
         let value = ele.getAttribute(name);
         return value ? value : "";
     }
+
+    public static combine(tagName: string, content: string) {
+        return "<" + tagName + ">" + content + "<" + tagName + "/>";
+    }
 }

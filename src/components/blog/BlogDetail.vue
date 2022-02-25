@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div><h1>{{ title }}</h1></div>
+  <div class="root">
+    <div class="title">{{ title }}</div>
     <div v-html="content"/>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default defineComponent({
             PathUtil.remove(path, 0)
           );
           // @ts-ignore
-          element.parentElement.appendChild(myIcon);
+          element.parentElement.insertBefore(myIcon, element);
         }
       }, 500);
     }
@@ -50,7 +50,25 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-div {
 
-}
+
+//h1 {
+//  font-size: 1.8rem;
+//}
+//
+//h2 {
+//  font-size: 1.5rem;
+//}
+//
+//h3 {
+//  font-size: 1.2rem;
+//}
+//
+//h4 {
+//  font-size: 0.8rem;
+//}
+//
+//h5 {
+//  font-size: 0.6rem;
+//}
 </style>

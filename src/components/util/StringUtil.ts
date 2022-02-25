@@ -1,3 +1,5 @@
+import DomUtil from "@/components/util/DomUtil";
+
 export default class StringUtil {
 
 
@@ -13,7 +15,48 @@ export default class StringUtil {
 
     public static markdownToHtml(strInput: string): string {
         let str = strInput;
+        str = this.processHeader(str);
         str = str.replaceAll("\n", "</br>");
         return str;
+    }
+
+    private static processHeader(str: string) {
+        let lines = str.split("\n");
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
+            let regex = new RegExp(" {0,10}#{1,5} {1,10}");
+            let match = regex.exec(line);
+            if (match) {
+                lines[i] = StringUtil.changeToHtml(line);
+            }
+        }
+        return lines.join("\n");
+    }
+
+    /**
+     *
+     * @param line e.g. ###  title
+     * @private
+     */
+    private static changeToHtml(line: string) {
+        let arr = StringUtil.toCharArray(line.trim());
+        let times = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let c = arr[i];
+            if (c === "#") {
+                times++;
+            } else {
+                break;
+            }
+        }
+        return DomUtil.combine("h" + times, line.replaceAll("#", "").trim());
+    }
+
+    private static toCharArray(line: string) {
+        let arr = [];
+        for (let i = 0; i < line.length; i++) {
+            arr[i] = line.charAt(i);
+        }
+        return arr;
     }
 }
