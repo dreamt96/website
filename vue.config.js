@@ -13,7 +13,7 @@ module.exports = defineConfig({
         loaderOptions: {
             sass: {
                 additionalData: `
-                                     @import "/src/style/global.scss";
+                                     @import "/src/style/var.scss";
                                 `
             }
         }
