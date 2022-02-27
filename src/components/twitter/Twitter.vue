@@ -26,6 +26,9 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .root {
+  display: flex;
+  flex-direction: column-reverse;
+
   .twitter{
     border-color: aqua;
     border-width: 1px;
