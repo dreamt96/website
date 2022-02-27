@@ -3,6 +3,7 @@ import Login from "@/components/Login.vue";
 import Home from "@/components/Home.vue";
 import Blog from "@/components/blog/Blog.vue";
 import BlogDetail from "@/components/blog/BlogDetail.vue";
+import Twitter from "@/components/twitter/Twitter.vue";
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         name: "blogDetail",
         component: BlogDetail
     },
+    {
+        path:"/twitter",
+        name:"twitter",
+        component: Twitter
+    }
 
 ]
 
