@@ -14,28 +14,28 @@ export default class StringUtil {
     }
 
     public static markdownToHtml(strInput: string): string {
-        console.log("before");
-        console.log(strInput);
         let str = strInput;
-        str = this.processHeader(str);
-
-        console.log("before br");
-        console.log(str);
-
+        str = this.parseMarkdown(str);
         str = str.replaceAll("\n", "</br>");
-        console.log("after");
-        console.log(str);
         return str;
     }
 
-    private static processHeader(str: string) {
+    private static parseMarkdown(str: string) {
         let lines = str.split("\n");
         for (let i = 0; i < lines.length; i++) {
             let line = lines[i];
             let regex = new RegExp(" {0,10}#{1,5} {1,10}");
             let match = regex.exec(line);
             if (match) {
-                lines[i] = StringUtil.changeToHtml(line);
+                line = StringUtil.headerToHtml(line);
+                lines[i] = line;
+            }
+
+            regex = new RegExp("\\[.{1,20}]\\(https{0,1}:\\/\\/.{1,100}\\)");
+            match = regex.exec(line);
+            if (match) {
+                line = StringUtil.urlToHtml(line);
+                lines[i] = line;
             }
         }
         return lines.join("\n");
@@ -46,7 +46,7 @@ export default class StringUtil {
      * @param line e.g. ###  title
      * @private
      */
-    private static changeToHtml(line: string) {
+    private static headerToHtml(line: string) {
         let arr = StringUtil.toCharArray(line.trim());
         let times = 0;
         for (let i = 0; i < arr.length; i++) {
@@ -66,5 +66,11 @@ export default class StringUtil {
             arr[i] = line.charAt(i);
         }
         return arr;
+    }
+
+    private static urlToHtml(line: string) {
+        let title = line.substring(line.indexOf("[")+1, line.indexOf("]"));
+        let url = line.substring(line.indexOf("(")+1, line.indexOf(")"))
+        return "<a href='" + url + "'>" + title + "</a>";
     }
 }
