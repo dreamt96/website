@@ -26,7 +26,15 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .root {
+  .twitter{
+    border-color: aqua;
+    border-width: 1px;
+    border-style: groove;
 
+    margin-bottom: 1em;
+
+    width: 30em;
+  }
 }
 
 </style>
