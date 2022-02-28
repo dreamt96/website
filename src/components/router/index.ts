@@ -8,6 +8,11 @@ import SimpleGame from "@/components/game/SimpleGame.vue";
 
 const routes = [
     {
+        path: "/",
+        name: "root",
+        component: Home,
+    },
+    {
         path: "/home",
         name: "home",
         component: Home
@@ -28,13 +33,13 @@ const routes = [
         component: BlogDetail
     },
     {
-        path:"/twitter",
-        name:"twitter",
+        path: "/twitter",
+        name: "twitter",
         component: Twitter
     },
     {
-        path:"/game",
-        name:"game",
+        path: "/game",
+        name: "game",
         component: SimpleGame
     }
 

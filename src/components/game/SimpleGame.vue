@@ -4,8 +4,8 @@
       <h3>movable circle handled by direction key</h3>
     </div>
     <div>
-      <svg :width="size" :height="size" class="game">
-        <circle :cx="cx" :cy="cy" r="4" stroke="green" stroke-width="2" fill="yellow"/>
+      <svg :height="size" :width="size" class="game">
+        <circle :cx="cx" :cy="cy" fill="yellow" r="4" stroke="green" stroke-width="2"/>
       </svg>
     </div>
 
@@ -102,48 +102,68 @@ export default defineComponent({
         this.cy = this.size;
       }
     },
+    removeKeyBoardInputListener() {
+      document.removeEventListener('keydown', function (event) {
+        // @ts-ignore
+        this.game.keydownEventProcessor(event);
+      });
+      document.removeEventListener('keyup', function (event){
+        // @ts-ignore
+        this.game.keyupEventProcessor(event);
+      });
+    },
+    // @ts-ignore
+    keydownEventProcessor(event) {
+      if (event.keyCode == 37) {
+        // @ts-ignore
+        this.left = true;
+      } else if (event.keyCode == 38) {
+        // @ts-ignore
+        this.up = true;
+      } else if (event.keyCode == 39) {
+        // @ts-ignore
+        this.right = true;
+      } else if (event.keyCode == 40) {
+        // @ts-ignore
+        this.down = true;
+      }
+    },
+    // @ts-ignore
+    keyupEventProcessor(event) {
+      if (event.keyCode == 37) {
+        // @ts-ignore
+        this.left = false;
+      } else if (event.keyCode == 38) {
+        // @ts-ignore
+        this.up = false;
+      } else if (event.keyCode == 39) {
+        // @ts-ignore
+        this.right = false;
+      } else if (event.keyCode == 40) {
+        // @ts-ignore
+        this.down = false;
+      }
+    },
     addKeyBoardInputListener() {
       // @ts-ignore
       document.game = this;
-      // @ts-ignore
       document.addEventListener('keydown', function (event) {
-        if (event.keyCode == 37) {
-          // @ts-ignore
-          this.game.left = true;
-        } else if (event.keyCode == 38) {
-          // @ts-ignore
-          this.game.up = true;
-        } else if (event.keyCode == 39) {
-          // @ts-ignore
-          this.game.right = true;
-        } else if (event.keyCode == 40) {
-          // @ts-ignore
-          this.game.down = true;
-        }
+        // @ts-ignore
+        this.game.keydownEventProcessor(event);
       });
-
       document.addEventListener('keyup', function (event) {
-        if (event.keyCode == 37) {
-          // @ts-ignore
-          this.game.left = false;
-        } else if (event.keyCode == 38) {
-          // @ts-ignore
-          this.game.up = false;
-        } else if (event.keyCode == 39) {
-          // @ts-ignore
-          this.game.right = false;
-        } else if (event.keyCode == 40) {
-          // @ts-ignore
-          this.game.down = false;
-        }
+        // @ts-ignore
+        this.game.keyupEventProcessor(event);
       });
-
     }
+  },
+  unmounted() {
+    this.removeKeyBoardInputListener();
   }
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .root {
   .game {
     background-color: azure;
