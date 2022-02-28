@@ -28,6 +28,9 @@ export default defineComponent({
     this.processImage();
   },
   methods: {
+    /**
+     * todo fix the problem that causes browser load a wrong url for a image
+     */
     processImage() {
       setTimeout(() => {
         let elements = document.querySelectorAll("img");
