@@ -1,7 +1,7 @@
 <template>
   <div class="root">
     <div>
-      <h3>movable circle with direction key</h3>
+      <h3>movable circle handled by direction key</h3>
     </div>
     <div>
       <svg :width="size" :height="size" class="game">
