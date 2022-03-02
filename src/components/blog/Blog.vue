@@ -1,6 +1,13 @@
 <template>
-  <div v-for="(item, i) in config.blogs" v-bind:key="i">
-    <router-link :to="'/blogDetail?path=' + item.path + '&title='+ item.title">{{ item.title }}</router-link>
+  <div class="root">
+    <div class="blog-abstract" v-for="(item, i) in config.blogs" v-bind:key="i">
+      <div class="link">
+        <router-link :to="'/blogDetail?path=' + item.path + '&title='+ item.title">{{ item.title }}</router-link>
+      </div>
+      <div class="date">
+        {{ item["publish-date"] }}
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -24,7 +31,22 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-div {
+.root {
+  .blog-abstract {
+    padding: 0.3em 0;
 
+    border-width: 1px;
+    border-style: solid;
+
+    margin: 0.5em;
+
+    .link {
+
+    }
+
+    .date {
+
+    }
+  }
 }
 </style>
