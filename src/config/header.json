@@ -11,6 +11,10 @@
     {
       "name": "twitter",
       "path": "/twitter"
+    },
+    {
+      "name": "game",
+      "path": "/game"
     }
   ]
 }

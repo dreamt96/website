@@ -1,12 +1,20 @@
 {
-    "blogs": [
-        {
-            "title": "review summary",
-            "path": "2022/02/review_summary.md"
-        },
-        {
-            "title": "test",
-            "path": "2022/02/test.md"
-        }
-    ]
+  "blogs": [
+    {
+      "title": "review summary",
+      "path": "2022/02/review_summary.md",
+      "publish-date": "2022-02-20"
+    },
+    {
+      "title": "test",
+      "path": "2022/02/test.md",
+      "publish-date": "2022-02-21"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "computer science"
+    }
+  ]
 }
