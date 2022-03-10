@@ -9,12 +9,23 @@
       "title": "test",
       "path": "2022/02/test.md",
       "publish-date": "2022-02-21"
+    },
+    {
+      "title": "diary",
+      "path": "2022/03/diary.md",
+      "tag-ids": [
+        "2"
+      ]
     }
   ],
   "tags": [
     {
       "id": 1,
       "name": "computer science"
+    },
+    {
+      "id": 2,
+      "name": "diary"
     }
   ]
 }
