@@ -16,7 +16,6 @@ export default class StringUtil {
     public static markdownToHtml(strInput: string): string {
         let str = strInput;
         str = this.parseMarkdown(str);
-        str = str.replaceAll("\n", "</br>");
         return str;
     }
 
@@ -28,6 +27,9 @@ export default class StringUtil {
             let match = regex.exec(line);
             if (match) {
                 line = StringUtil.headerToHtml(line);
+                lines[i] = line;
+            }else{
+                line = StringUtil.pToHtml(line);
                 lines[i] = line;
             }
 
@@ -72,5 +74,9 @@ export default class StringUtil {
         let title = line.substring(line.indexOf("[")+1, line.indexOf("]"));
         let url = line.substring(line.indexOf("(")+1, line.indexOf(")"))
         return "<a href='" + url + "'>" + title + "</a>";
+    }
+
+    private static pToHtml(line: string) {
+        return `<p>${line}</p>`;
     }
 }
