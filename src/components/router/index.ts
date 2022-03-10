@@ -5,6 +5,7 @@ import Blog from "@/components/blog/Blog.vue";
 import BlogDetail from "@/components/blog/BlogDetail.vue";
 import Twitter from "@/components/twitter/Twitter.vue";
 import SimpleGame from "@/components/game/SimpleGame.vue";
+import SearchResult from "@/components/SearchResult.vue";
 
 const routes = [
     {
@@ -41,7 +42,12 @@ const routes = [
         path: "/game",
         name: "game",
         component: SimpleGame
-    }
+    },
+    {
+        path: "/searchResult",
+        name: "searchResult",
+        component: SearchResult
+    },
 
 ]
 

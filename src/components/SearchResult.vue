@@ -8,15 +8,11 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: "DropDown",
-  props: {
-    data: null
-  }
+  name: "SearchResult"
 })
 </script>
 
 <style scoped lang="scss">
 .root {
-  display: inline-block;
 }
 </style>

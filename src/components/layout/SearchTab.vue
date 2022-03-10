@@ -1,8 +1,8 @@
 <template>
   <div class="root">
     <drop-down :data="headers"/>
-    <input type="text"/>
-    <button>search</button>
+    <input v-model="searchKey" type="text"/>
+    <router-link :to="'/searchResult?searchKey' + searchKey">search</router-link>
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default defineComponent({
   },
   data() {
     return {
-      headers: []
+      headers: [],
+      searchKey: null
     }
   },
   mounted() {
@@ -26,7 +27,8 @@ export default defineComponent({
       // @ts-ignore
       this.headers.push({name: conf.name});
     }
-  }
+  },
+  methods: {}
 })
 </script>
 

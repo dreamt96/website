@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import data from "@/config/header.json";
+import config from "@/config/header.json";
 import SearchTab from "@/components/layout/SearchTab.vue";
 
 export default defineComponent({
@@ -25,7 +25,7 @@ export default defineComponent({
 
   data() {
     return {
-      headers: data.header
+      headers: config.header
     }
   }
 });
