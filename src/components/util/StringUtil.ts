@@ -16,6 +16,7 @@ export default class StringUtil {
     public static markdownToHtml(strInput: string): string {
         let str = strInput;
         str = this.parseMarkdown(str);
+        console.log(`from markdown \n ${strInput} to html \n ${str}`);
         return str;
     }
 

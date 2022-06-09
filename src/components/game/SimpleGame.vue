@@ -26,7 +26,8 @@ export default defineComponent({
       down: false,
       cx: 5,
       cy: 5,
-      speed: 5
+      oneStep: 0.5,
+      timePerStep: 5
     }
   },
   mounted() {
@@ -39,7 +40,7 @@ export default defineComponent({
       this.interval = setInterval(function () {
         // @ts-ignore
         this.determineHowToMove();
-      }.bind(this), 50);
+      }.bind(this), this.timePerStep);
     },
     determineHowToMove() {
       let trueCount: number = 0;
@@ -77,16 +78,16 @@ export default defineComponent({
         case "stop":
           break;
         case "left":
-          this.cx = this.cx - this.speed;
+          this.cx = this.cx - this.oneStep;
           break;
         case "right":
-          this.cx = this.cx + this.speed;
+          this.cx = this.cx + this.oneStep;
           break;
         case "up":
-          this.cy = this.cy - this.speed;
+          this.cy = this.cy - this.oneStep;
           break;
         case "down":
-          this.cy = this.cy + this.speed;
+          this.cy = this.cy + this.oneStep;
           break;
       }
       this.relocate();
@@ -96,7 +97,8 @@ export default defineComponent({
         this.cx = 0;
       } else if (this.cx >= this.size) {
         this.cx = this.size;
-      } else if (this.cy <= 0) {
+      }
+      if (this.cy <= 0) {
         this.cy = 0;
       } else if (this.cy >= this.size) {
         this.cy = this.size;
@@ -107,7 +109,7 @@ export default defineComponent({
         // @ts-ignore
         this.game.keydownEventProcessor(event);
       });
-      document.removeEventListener('keyup', function (event){
+      document.removeEventListener('keyup', function (event) {
         // @ts-ignore
         this.game.keyupEventProcessor(event);
       });
