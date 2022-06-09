@@ -26,7 +26,7 @@ export default defineComponent({
       down: false,
       cx: 5,
       cy: 5,
-      oneStep: 0.5,
+      distancePerStep: 0.5,
       timePerStep: 5
     }
   },
