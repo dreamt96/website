@@ -15,6 +15,10 @@
     {
       "name": "game",
       "path": "/game"
+    },
+    {
+      "name": "tool",
+      "path": "/tool"
     }
   ]
 }

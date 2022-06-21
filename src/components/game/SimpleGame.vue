@@ -78,16 +78,16 @@ export default defineComponent({
         case "stop":
           break;
         case "left":
-          this.cx = this.cx - this.oneStep;
+          this.cx = this.cx - this.distancePerStep;
           break;
         case "right":
-          this.cx = this.cx + this.oneStep;
+          this.cx = this.cx + this.distancePerStep;
           break;
         case "up":
-          this.cy = this.cy - this.oneStep;
+          this.cy = this.cy - this.distancePerStep;
           break;
         case "down":
-          this.cy = this.cy + this.oneStep;
+          this.cy = this.cy + this.distancePerStep;
           break;
       }
       this.relocate();

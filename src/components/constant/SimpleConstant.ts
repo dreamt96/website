@@ -7,5 +7,3 @@ export default class SimpleConstant {
     public static sidebarType: SidebarType = new SidebarType();
 
 }
-
-
