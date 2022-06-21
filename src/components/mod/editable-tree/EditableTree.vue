@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-<!--todo-->
+
   </div>
 </template>
 
@@ -8,22 +8,22 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: "DropDown",
+  name: "EditableTree",
   props: {
-  },
-  data(){
-
+    node: TreeNode
   },
   mounted() {
+    this.loadData();
   },
-  methods:{
+  methods: {
+    loadData() {
 
+    }
   }
 })
 </script>
 
 <style scoped lang="scss">
 .root {
-  display: inline-block;
 }
 </style>

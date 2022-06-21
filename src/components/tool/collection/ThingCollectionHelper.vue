@@ -1,29 +1,20 @@
 <template>
   <div class="root">
-<!--todo-->
+    <editable-tree/>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
+import EditableTree from "@/components/mod/editable-tree/EditableTree.vue";
 
 export default defineComponent({
-  name: "DropDown",
-  props: {
-  },
-  data(){
-
-  },
-  mounted() {
-  },
-  methods:{
-
-  }
+  name: "ThingCollectionHelper",
+  components: {EditableTree}
 })
 </script>
 
 <style scoped lang="scss">
 .root {
-  display: inline-block;
 }
 </style>
