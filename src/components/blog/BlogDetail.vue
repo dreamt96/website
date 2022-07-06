@@ -75,6 +75,11 @@ export default defineComponent({
   ::v-deep(h5) {
     font-size: 1.1rem;
   }
+
+  ::v-deep(p) {
+    font-size: 0.9rem;
+    padding-top: 0.5rem;
+  }
 }
 
 
