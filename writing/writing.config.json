@@ -1,21 +1,19 @@
 {
   "blogs": [
     {
-      "title": "review summary",
-      "path": "2022/02/review_summary.md",
-      "publish-date": "2022-02-20"
-    },
-    {
       "title": "test",
       "path": "2022/02/test.md",
       "publish-date": "2022-02-21"
     },
     {
-      "title": "diary",
-      "path": "2022/03/diary.md",
-      "tag-ids": [
-        "2"
-      ]
+      "title": "data-save-on-close-process",
+      "path": "2022/07/data-save-on-close-process.md",
+      "publish-date": "2022-07-11"
+    },
+    {
+      "title": "summary",
+      "path": "2022/02/summary.md",
+      "publish-date": "2022-07-12"
     }
   ],
   "tags": [
